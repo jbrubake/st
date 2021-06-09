@@ -32,3 +32,13 @@ Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
+Applied Patches
+---------------
+
+- st-clipboard-20180309-c5ba9c0.diff
+- st-delkey-20201112-4ef0cbd.diff
+- st-osc10-20210106-4ef0cbd.diff
+- st-rightclickpaste-0.8.2.diff
+- st-selectioncolors-0.8.4.diff
+- st-undercurl-0.8.4.diff
+- st-xresources-20200604-9ba7ecf.diff
