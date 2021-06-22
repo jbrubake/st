@@ -42,3 +42,4 @@ Applied Patches
 - st-selectioncolors-0.8.4.diff
 - st-undercurl-0.8.4.diff
 - st-xresources-20200604-9ba7ecf.diff
+- st-externalpipe-0.8.4.diff
