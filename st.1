@@ -159,6 +159,20 @@ Copy the selected text to the clipboard selection.
 .TP
 .B Ctrl-Shift-v
 Paste from the clipboard selection.
+.TP
+.B Ctrl-Shift-u
+Send all visible URLs to
+.BR st-openurl.
+A possible version of
+.BR st-openurl
+is:
+.PP
+.in +8n
+.EX
+#!/bin/sh
+
+xurls | dmenu -w $WINDOWID | xargs -r open
+.EE
 .SH CUSTOMIZATION
 .B st
 can be customized by creating a custom config.h and (re)compiling the source
@@ -171,7 +185,9 @@ See the LICENSE file for the terms of redistribution.
 .BR tabbed (1),
 .BR utmp (1),
 .BR stty (1),
-.BR scroll (1)
+.BR scroll (1),
+xurls: https://raw.githubusercontent.com/bobrippling/perlbin/master/xurls,
+open: https://github.com/bobrippling/open
 .SH BUGS
 See the TODO file in the distribution.
 
