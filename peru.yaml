@@ -1,0 +1,6 @@
+imports:
+  st-urlhandler: ./
+
+curl module st-urlhandler:
+  url: https://raw.githubusercontent.com/LukeSmithxyz/st/master/st-urlhandler
+
