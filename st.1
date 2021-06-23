@@ -160,23 +160,33 @@ Copy the selected text to the clipboard selection.
 .B Ctrl-Shift-v
 Paste from the clipboard selection.
 .TP
+.B Ctrl-Shift-o
+Send visible URLs to dmenu and open the result using
+.BR xdg-open(1)
+.TP
 .B Ctrl-Shift-u
-Send all visible URLs to
-.BR st-openurl.
-A possible version of
-.BR st-openurl
-is:
-.PP
-.in +8n
-.EX
-#!/bin/sh
-
-xurls | dmenu -w $WINDOWID | xargs -r open
-.EE
+Send visible URLs to dmenu and copy result to the clipboard.
 .SH CUSTOMIZATION
 .B st
 can be customized by creating a custom config.h and (re)compiling the source
 code. This keeps it fast, secure and simple.
+.PP
+URL opening and copying is provided by the
+.BR st-urlhandler
+script. This functionality can be customized by providing your own
+.BR st-urlhandler
+script earlier in your
+.B $PATH.
+This script receives the visible contents of the terminal, line by line. It will be
+called with one of two options:
+.TP
+.IN +10n
+.BR \-o
+to open the selected URL
+.TP
+.IN +10n
+.BR \-c
+to copy the selected URL to the clipboard
 .SH AUTHORS
 See the LICENSE file for the authors.
 .SH LICENSE
@@ -185,9 +195,7 @@ See the LICENSE file for the terms of redistribution.
 .BR tabbed (1),
 .BR utmp (1),
 .BR stty (1),
-.BR scroll (1),
-xurls: https://raw.githubusercontent.com/bobrippling/perlbin/master/xurls,
-open: https://github.com/bobrippling/open
+.BR scroll (1)
 .SH BUGS
 See the TODO file in the distribution.
 

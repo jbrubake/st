@@ -32,6 +32,8 @@ Credits
 -------
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
+The `st-urlhandler` script is written by [Luke Smit](https://github.com/LukeSmithxyz/st)
+
 Applied Patches
 ---------------
 
