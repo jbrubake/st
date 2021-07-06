@@ -46,3 +46,16 @@ Applied Patches
 - st-xresources-20200604-9ba7ecf.diff
 - st-externalpipe-0.8.4.diff
 - st-font2-20190416-ba72400.diff
+
+Stay Synced with Upstream
+-------------------------
+
+After cloning this repo, add the upstream repository and create a branch to
+track upstream/master
+
+```sh
+$ git remote add upstream "https://git.suckless.org/st"
+$ git fetch upstream
+$ git branch upstream upstream/master
+```
+
