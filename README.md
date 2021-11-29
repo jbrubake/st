@@ -47,6 +47,7 @@ Applied Patches
 - st-externalpipe-0.8.4.diff
 - st-font2-20190416-ba72400.diff
 - st-scrollback-20210507-4536f46.diff
+- st-scrollback-mouse-20191024-a2c479c.diff
 
 Stay Synced with Upstream
 -------------------------
