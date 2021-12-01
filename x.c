@@ -1810,6 +1810,43 @@ xsettitle(char *p)
 	XFree(prop.value);
 }
 
+
+static int vbellset = 0; /* 1 during visual bell, 0 otherwise */
+static struct timespec lastvbell = {0};
+
+static int
+isvbellcell(int x, int y)
+{
+	int right = win.tw / win.cw - 1, bottom = win.th / win.ch - 1;
+	return vbellmode == 0 && (VBCELL);  /* logic defined at config.h */
+}
+
+static void
+vbellbegin() {
+	clock_gettime(CLOCK_MONOTONIC, &lastvbell);
+	if (vbellset)
+		return;
+	vbellset = 1;
+	redraw();
+	XFlush(xw.dpy);
+}
+
+static void
+xfillcircle(int x, int y, int r, uint color_ix)
+{
+	XSetForeground(xw.dpy, dc.gc, dc.col[color_ix].pixel);
+	XFillArc(xw.dpy, xw.buf, dc.gc, x - r, y - r, r * 2, r * 2, 0, 360*64);
+}
+
+static void
+xdrawvbell() {
+	int r = round(vbellradius * (vbellradius > 0 ? win.w : -win.cw));
+	int x = borderpx + r + vbellx * (win.tw - 2 * r);
+	int y = borderpx + r + vbelly * (win.th - 2 * r);
+	xfillcircle(x, y, r, vbellcolor_outline);
+	xfillcircle(x, y, r / 1.2, vbellcolor); /* 1.2 - an artistic choice */
+}
+
 int
 xstartdraw(void)
 {
@@ -1831,6 +1868,8 @@ xdrawline(Line line, int x1, int y1, int x2)
 			continue;
 		if (selected(x, y1))
 			new.mode ^= ATTR_SELECTED;
+		if (vbellset && isvbellcell(x, y1))
+			new.mode ^= ATTR_REVERSE;
 		if (i > 0 && ATTRCMP(base, new)) {
 			xdrawglyphfontspecs(specs, base, i, ox, y1);
 			specs += i;
@@ -1850,6 +1889,9 @@ xdrawline(Line line, int x1, int y1, int x2)
 void
 xfinishdraw(void)
 {
+	if (vbellset && vbellmode == 1)
+		xdrawvbell();
+
 	XCopyArea(xw.dpy, xw.buf, xw.win, dc.gc, 0, 0, win.w,
 			win.h, 0, 0);
 	XSetForeground(xw.dpy, dc.gc,
@@ -1931,6 +1973,8 @@ xbell(void)
 		xseturgency(1);
 	if (bellvolume)
 		XkbBell(xw.dpy, xw.win, bellvolume, (Atom)NULL);
+	if (vbelltimeout)
+		vbellbegin();
 }
 
 void
@@ -2173,6 +2217,16 @@ run(void)
 				tsetdirtattr(ATTR_BLINK);
 				lastblink = now;
 				timeout = blinktimeout;
+			}
+		}
+
+		if (vbellset) {
+			double remain = vbelltimeout - TIMEDIFF(now, lastvbell);
+			if (remain <= 0) {
+				vbellset = 0;
+				redraw();
+			} else if (timeout < 0 || remain < timeout) {
+				timeout = remain;
 			}
 		}
 

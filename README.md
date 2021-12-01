@@ -48,6 +48,8 @@ Applied Patches
 - st-font2-20190416-ba72400.diff
 - st-scrollback-20210507-4536f46.diff
 - st-scrollback-mouse-20191024-a2c479c.diff
+- st-visualbell2-basic-2020-05-13-045a0fa.diff
+- st-visualbell2-enhanced-2020-05-13-045a0fa.diff
 
 Stay Synced with Upstream
 -------------------------
