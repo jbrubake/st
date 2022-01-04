@@ -52,6 +52,7 @@ Applied Patches
 - st-visualbell2-enhanced-2020-05-13-045a0fa.diff
 - st-anysize-0.8.4.diff
 - st-anygeometry-0.8.1.diff
+- st-blinking_cursor-20200531-a2a7044.diff
 
 Stay Synced with Upstream
 -------------------------
