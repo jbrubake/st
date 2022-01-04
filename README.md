@@ -51,6 +51,7 @@ Applied Patches
 - st-visualbell2-basic-2020-05-13-045a0fa.diff
 - st-visualbell2-enhanced-2020-05-13-045a0fa.diff
 - st-anysize-0.8.4.diff
+- st-anygeometry-0.8.1.diff
 
 Stay Synced with Upstream
 -------------------------
