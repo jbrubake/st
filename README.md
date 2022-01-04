@@ -50,6 +50,7 @@ Applied Patches
 - st-scrollback-mouse-20191024-a2c479c.diff
 - st-visualbell2-basic-2020-05-13-045a0fa.diff
 - st-visualbell2-enhanced-2020-05-13-045a0fa.diff
+- st-anysize-0.8.4.diff
 
 Stay Synced with Upstream
 -------------------------
