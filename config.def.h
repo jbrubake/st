@@ -142,6 +142,7 @@ static const char *colorname[] = {
 	[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
+<<<<<<< HEAD
 	/* "#cccccc", */
 	/* "#2e3440", */
 	/* "black", */
@@ -150,6 +151,12 @@ static const char *colorname[] = {
     "green", /* selection bg */
     "white", /* background */
     "purple" /* foreground */
+=======
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
+>>>>>>> upstream
 };
 
 
@@ -157,6 +164,7 @@ static const char *colorname[] = {
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
+<<<<<<< HEAD
 
 unsigned int defaultbg = 258;
 unsigned int defaultfg = 259;
@@ -169,6 +177,12 @@ unsigned int selectionfg = 7;
 /* If 0 use selectionfg as foreground in order to have a uniform foreground-color */
 /* Else if 1 keep original foreground-color of each cell => more colors :) */
 static int ignoreselfg = 1;
+=======
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;
+>>>>>>> upstream
 
 /*
  * https://invisible-island.net/xterm/ctlseqs/ctlseqs.html#h4-Functions-using-CSI-_-ordered-by-the-final-character-lparen-s-rparen:CSI-Ps-SP-q.1D81
