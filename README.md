@@ -1,41 +1,37 @@
-st - simple terminal
---------------------
-st is a simple terminal emulator for X which sucks less.
+# st - simple terminal
 
+`st` is a simple terminal emulator for X which sucks less.
 
-Requirements
-------------
-In order to build st you need the Xlib header files.
+## Requirements
 
+In order to build st you need the `Xlib` header files.
 
-Installation
-------------
-Edit config.mk to match your local setup (st is installed into
-the /usr/local namespace by default).
+## Installation
 
-Afterwards enter the following command to build and install st (if
-necessary as root):
+Edit `config.mk` to match your local setup (`st` is installed into the
+`/usr/local` namespace by default).
+
+Afterwards enter the following command to build and install `st` (if necessary
+as root):
 
     make clean install
 
+## Running st
 
-Running st
-----------
-If you did not install st with make clean install, you must compile
-the st terminfo entry with the following command:
+If you did not install `st` with make clean install, you must compile the `st`
+terminfo entry with the following command:
 
     tic -sx st.info
 
 See the man page for additional details.
 
-Credits
--------
+## Credits
+
 Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.
 
-The `st-urlhandler` script is written by [Luke Smit](https://github.com/LukeSmithxyz/st)
+The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmithxyz/st)
 
-Applied Patches
----------------
+## Applied Patches
 
 - st-clipboard-20180309-c5ba9c0.diff
 - st-delkey-20201112-4ef0cbd.diff
@@ -54,15 +50,14 @@ Applied Patches
 - st-anygeometry-0.8.1.diff
 - st-blinking_cursor-20200531-a2a7044.diff
 
-Stay Synced with Upstream
--------------------------
+## Stay Synced with Upstream
 
-After cloning this repo, add the upstream repository and create a branch to
-track upstream/master
+After cloning this repo, add the upstream repository as a remote:
 
-```sh
-$ git remote add upstream "https://git.suckless.org/st"
-$ git fetch upstream
-$ git branch upstream upstream/master
-```
+    $ git remote add upstream "https://git.suckless.org/st"
+
+To merge changes from upstream:
+
+    $ git fetch upstream
+    $ git merge upstream/master
 
