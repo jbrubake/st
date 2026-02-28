@@ -1256,6 +1256,7 @@ csiparse(void)
 			v = -1;
 		csiescseq.arg[csiescseq.narg++] = v;
 		p = np;
+		readcolonargs(&p, csiescseq.narg-1, csiescseq.carg);
 		if (sep == ';' && *p == ':')
 			sep = ':'; /* allow override to colon once */
 		if (*p != sep || csiescseq.narg == ESC_ARG_SIZ)
@@ -1478,6 +1479,10 @@ tsetattr(const int *attr, int l)
 			term.c.attr.ucolor[0] = -1;
 			term.c.attr.ucolor[1] = -1;
 			term.c.attr.ucolor[2] = -1;
+			term.c.attr.ustyle = -1;
+			term.c.attr.ucolor[0] = -1;
+			term.c.attr.ucolor[1] = -1;
+			term.c.attr.ucolor[2] = -1;
 			break;
 		case 1:
 			term.c.attr.mode |= ATTR_BOLD;
@@ -1519,7 +1524,14 @@ tsetattr(const int *attr, int l)
 			term.c.attr.mode &= ~ATTR_ITALIC;
 			break;
 		case 24:
-			term.c.attr.mode &= ~ATTR_UNDERLINE;
+			term.c.attr.ustyle = csiescseq.carg[i][0];
+
+			if (term.c.attr.ustyle != 0)
+				term.c.attr.mode &= ~ATTR_UNDERLINE;
+			else
+				term.c.attr.mode &= ~ATTR_UNDERLINE;
+
+			term.c.attr.mode ^= ATTR_DIRTYUNDERLINE;
 			break;
 		case 25:
 			term.c.attr.mode &= ~ATTR_BLINK;

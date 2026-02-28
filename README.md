@@ -45,7 +45,7 @@ The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmi
 - st-scrollback-0.9.2.diff : scroll back through terminal output using Shift+{PageUp, PageDown}
 - st-scrollback-mouse-0.9.2.diff : allow scrolling using Shift+MouseWheel
 - st-selectioncolors-0.8.4.diff : adds the two color-settings selectionfg and selectionbg
-- st-undercurl-0.8.4.diff : adds support for special underlines
+- st-undercurl-0.9-20240103.diff : adds support for special underlines
 - st-visualbell2-basic-2020-05-13-045a0fa.diff : renders a configurable visual indication on terminal bell event
 - st-visualbell2-enhanced-2020-05-13-045a0fa.diff : renders a configurable visual indication on terminal bell event.
 - st-xresources-20200604-9ba7ecf.diff : adds the ability to configure st via Xresources
