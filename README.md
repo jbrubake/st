@@ -39,7 +39,7 @@ The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmi
 - st-clipboard-20180309-c5ba9c0.diff : sets CLIPBOARD on selection
 - st-delkey-20201112-4ef0cbd.diff : return BS on pressing backspace and DEL on pressing the delete key
 - st-externalpipe-0.8.5.diff : reading and writing st's screen through a pipe
-- st-font2-20190416-ba72400.diff : allows to add spare font besides default
+- st-font2-0.8.5.diff : allows to add spare font besides default
 - st-osc10-20210106-4ef0cbd.diff : 
 - st-rightclickpaste-0.8.2.diff : 
 - st-scrollback-20210507-4536f46.diff : scroll back through terminal output using Shift+{PageUp, PageDown}
