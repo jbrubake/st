@@ -43,7 +43,7 @@ The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmi
 - st-osc10-20210106-4ef0cbd.diff : 
 - st-rightclickpaste-0.8.2.diff : 
 - st-scrollback-0.9.2.diff : scroll back through terminal output using Shift+{PageUp, PageDown}
-- st-scrollback-mouse-20191024-a2c479c.diff : allow scrolling using Shift+MouseWheel
+- st-scrollback-mouse-0.9.2.diff : allow scrolling using Shift+MouseWheel
 - st-selectioncolors-0.8.4.diff : adds the two color-settings selectionfg and selectionbg
 - st-undercurl-0.8.4.diff : adds support for special underlines
 - st-visualbell2-basic-2020-05-13-045a0fa.diff : renders a configurable visual indication on terminal bell event
