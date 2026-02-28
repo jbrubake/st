@@ -48,7 +48,7 @@ The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmi
 - st-undercurl-0.9-20240103.diff : adds support for special underlines
 - st-visualbell2-basic-2020-05-13-045a0fa.diff : renders a configurable visual indication on terminal bell event
 - st-visualbell2-enhanced-2020-05-13-045a0fa.diff : renders a configurable visual indication on terminal bell event.
-- st-xresources-20200604-9ba7ecf.diff : adds the ability to configure st via Xresources
+- st-xresources-20230320-45a15676.diff : adds the ability to configure st via Xresources
 
 ## Stay Synced with Upstream
 
