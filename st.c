@@ -1155,6 +1155,16 @@ tscrollup(int orig, int n, int copyhist)
 	if (term.scr > 0 && term.scr < HISTSIZE)
 		term.scr = MIN(term.scr + n, HISTSIZE-1);
 
+	if (copyhist) {
+		term.histi = (term.histi + 1) % HISTSIZE;
+		temp = term.hist[term.histi];
+		term.hist[term.histi] = term.line[orig];
+		term.line[orig] = temp;
+	}
+
+	if (term.scr > 0 && term.scr < HISTSIZE)
+		term.scr = MIN(term.scr + n, HISTSIZE-1);
+
 	tclearregion(0, orig, term.col-1, orig+n-1);
 	tsetdirt(orig+n, term.bot);
 
