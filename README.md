@@ -35,7 +35,7 @@ The `st-urlhandler` script is written by [Luke Smith](https://github.com/LukeSmi
 
 - st-anygeometry-0.8.1.diff : allows you to set st's width and height as pixels instead of cells
 - st-anysize-20220718-baa9357.diff : allows st to resize to any pixel size
-- st-blinking_cursor-20200531-a2a7044.diff : allows the use of a blinking cursor
+- st-blinking_cursor-20230819-3a6d6d7.diff : allows the use of a blinking cursor
 - st-clipboard-20180309-c5ba9c0.diff : sets CLIPBOARD on selection
 - st-delkey-20201112-4ef0cbd.diff : return BS on pressing backspace and DEL on pressing the delete key
 - st-externalpipe-0.8.4.diff : reading and writing st's screen through a pipe
